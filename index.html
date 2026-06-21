@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Emergency Help Kit</title>
+    <meta name="description" content="Quick access to important emergency numbers and nearby hospitals. ایمرجنسی رابطے">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="glow red-glow"></div>
+        <div class="glow blue-glow"></div>
+    </div>
+    
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <span class="logo">🚨</span>
+            </div>
+            <h1>Emergency Help Kit</h1>
+            <p class="subtitle-urdu">ایمرجنسی رابطے</p>
+            <p class="subtitle">Quick access to emergency services</p>
+        </header>
+
+        <section class="quick-dial">
+            <h2 class="section-title">Quick Dial</h2>
+            <div class="dial-grid">
+                <a href="tel:1122" class="dial-card rescue">
+                    <div class="icon-wrapper"><span class="icon">🚑</span></div>
+                    <div class="details">
+                        <h3>Rescue 1122</h3>
+                        <p>Ambulance & Fire</p>
+                    </div>
+                </a>
+                <a href="tel:15" class="dial-card police">
+                    <div class="icon-wrapper"><span class="icon">🚓</span></div>
+                    <div class="details">
+                        <h3>Police 15</h3>
+                        <p>Law Enforcement</p>
+                    </div>
+                </a>
+                <a href="tel:115" class="dial-card edhi">
+                    <div class="icon-wrapper"><span class="icon">🏥</span></div>
+                    <div class="details">
+                        <h3>Edhi 115</h3>
+                        <p>Private Ambulance</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="nearby-facilities">
+            <h2 class="section-title">Nearby Hospitals</h2>
+            <p class="section-desc">Find trauma centers and hospitals close to your current location.</p>
+            
+            <div id="location-prompt" class="glass-card location-card">
+                <div class="pulse-icon">📍</div>
+                <h3>Share Location</h3>
+                <p>We need your location to find the nearest emergency facilities.</p>
+                <button id="btn-get-location" class="primary-btn">Find Hospitals Near Me</button>
+            </div>
+
+            <div id="loading-state" class="glass-card hidden">
+                <div class="spinner"></div>
+                <p>Scanning area for facilities...</p>
+            </div>
+
+            <div id="error-state" class="glass-card hidden error-card">
+                <div class="error-icon">⚠️</div>
+                <p id="error-message">Could not access location.</p>
+                <button id="btn-retry" class="secondary-btn">Try Again</button>
+            </div>
+
+            <div id="hospitals-list" class="hospitals-list hidden">
+                <!-- Rendered dynamically via JS -->
+            </div>
+        <section class="first-aid">
+            <h2 class="section-title">First Aid & Safety Guide</h2>
+            <p class="section-desc">ابتدائی طبی امداد - Quick reference for emergencies</p>
+
+            <div class="aid-grid">
+                <!-- Bleeding -->
+                <div class="aid-card">
+                    <div class="aid-icon">🩸</div>
+                    <h3>Bleeding / خون بہنا</h3>
+                    <ul>
+                        <li>Apply firm pressure with clean cloth. <br/><span class="urdu-text">صاف کپڑے یا پٹی سے مضبوط دباؤ ڈالیں</span></li>
+                        <li>Keep pressure for 5–10 minutes. <br/><span class="urdu-text">5–10 منٹ تک مسلسل دباؤ برقرار رکھیں</span></li>
+                        <li>Raise the injured part above heart level. <br/><span class="urdu-text">زخمی حصے کو دل کی سطح سے اوپر رکھیں</span></li>
+                    </ul>
+                </div>
+
+                <!-- Burns -->
+                <div class="aid-card">
+                    <div class="aid-icon">🔥</div>
+                    <h3>Burns / جل جانا</h3>
+                    <ul>
+                        <li>Cool the burn under cold running water for 10 mins. <br/><span class="urdu-text">جلے ہوئے حصے کو 10 منٹ تک ٹھنڈے پانی کے نیچے رکھیں</span></li>
+                        <li>Do not apply ice, creams, or gels. <br/><span class="urdu-text">برف یا کریم نہ لگائیں</span></li>
+                        <li>Cover with a clean, non-fluffy cloth. <br/><span class="urdu-text">صاف کپڑے سے ڈھانپ دیں</span></li>
+                    </ul>
+                </div>
+
+                <!-- Choking -->
+                <div class="aid-card">
+                    <div class="aid-icon">🫁</div>
+                    <h3>Choking / گلے میں کچھ پھنس جانا</h3>
+                    <ul>
+                        <li>Give up to 5 back blows between shoulder blades. <br/><span class="urdu-text">کندھوں کے درمیان 5 بار تھپتھپائیں</span></li>
+                        <li>If not cleared, give up to 5 abdominal thrusts. <br/><span class="urdu-text">اگر نہ نکلے تو پیٹ پر 5 بار دباؤ ڈالیں</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>Point Zero Emergency Protocol</p>
+            <p class="small">Scan QR code at incident points for instant access.</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
